@@ -1,0 +1,13 @@
+development: &defaults
+  adapter: postgresql
+  encoding: unicode
+  database: money_collector_development
+  template: template0
+  pool: 25
+
+test:
+  <<: *defaults
+  database: money_collector_development
+
+production:
+  <<: *defaults

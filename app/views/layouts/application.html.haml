@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    "application", media: "all"
+    = javascript_include_tag "application"
+
+  %body
+    %header
+      .container-fluid
+        .navbar-header.navbar-header-large
+          = link_to 'home', root_path
+        .navbar-sub-header
+        %ul.nav.navbar-nav.pull-right
+          %li
+            %a{:href => "#"}
+              = t(:menu)
+          %li
+            %a{:href => "#"}
+              = t(:page_help)
+          %li
+            %a{:href => "#"}
+              = t(:account)
+        .clearfix
+
+    %header.navbar.navbar-default.navbar-static-top{role: "navigation"}
+      .container-fluid
+        %button.navbar-toggle{class: 'pull-left'}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+
+    %section
+      .container-fluid
+        = yield
+
+    %footer#footer{role: "footer"}
+      .container-fluid
+        %%p &copy; 2015
