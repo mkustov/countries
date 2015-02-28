@@ -239,6 +239,9 @@ GEM
       nori (~> 2.4.0)
       uuid (~> 2.3.7)
       wasabi (~> 3.3.0)
+    simple_form (3.1.0)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -313,6 +316,7 @@ DEPENDENCIES
   rails (= 4.2.0)
   sass-rails
   savon (~> 2.0)
+  simple_form
   thin
   turbolinks
   uglifier

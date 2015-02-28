@@ -1,2 +1,6 @@
 .container
   = link_to 'Available Currencies', currencies_path
+  = simple_form_for :currency, url: currencies_path, method: :get do |f|
+    = f.input :currency_name
+    = f.submit, class: ''
+  = link_to 'Currency', currencies_path(currency_name: 'usd')

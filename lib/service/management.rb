@@ -8,14 +8,14 @@ module Service
       Savon.client(
         wsdl: wsdl,
         log: true,
-        open_timeout: 5,
-        read_timeout: 5,
+        open_timeout: 25,
+        read_timeout: 25,
         pretty_print_xml: true,
         env_namespace: :urn,
         raise_errors: false)
     end
 
-    def self.invoke(action, message)
+    def self.invoke(action, message = nil)
       transaction_status = 'Success'
       data = {}
 
@@ -25,7 +25,7 @@ module Service
         transaction_status = 'Failed'
         data = call_result.body.inspect
       else
-        data = Hash.from_xml(call_result.body["#{action}_response".to_sym]["#{action}_result".to_sym])
+        data = Hash.from_xml(call_result.body["#{action}_response".to_sym]["#{action}_result".to_sym])['NewDataSet']
       end
 
       API::Result.new(transaction_status, data)

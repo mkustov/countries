@@ -12,6 +12,7 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'savon', '~> 2.0'
+gem 'simple_form'
 
 group :development do
   gem 'thin'

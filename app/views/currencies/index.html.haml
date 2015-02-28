@@ -1,5 +1,5 @@
 .container
-  - if @currencies.any?
+  - if @currencies.is_a?(Array) && @currencies.any?
     .panel.panel-default.panel-primary
       .panel-heading
         %h3.panel-title Currencies
@@ -25,3 +25,4 @@
 
   - else
     Sorry, no data available
+    = @currencies.to_s
