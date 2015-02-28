@@ -12,4 +12,19 @@ gem 'haml-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'savon', '~> 2.0'
-gem 'jazz_hands'
+
+group :development do
+  gem 'thin'
+  gem 'parallel_tests'
+
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+
+  gem 'quiet_assets'
+
+  gem 'mailcatcher'
+  gem 'meta_request'
+  gem 'bullet'
+  gem 'jazz_hands'
+end

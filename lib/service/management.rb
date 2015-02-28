@@ -25,7 +25,7 @@ module Service
         transaction_status = 'Failed'
         data = call_result.body.inspect
       else
-        data = call_result.body["#{action}_response".to_sym]
+        data = Hash.from_xml(call_result.body["#{action}_response".to_sym]["#{action}_result".to_sym])
       end
 
       API::Result.new(transaction_status, data)
