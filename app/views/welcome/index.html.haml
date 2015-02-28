@@ -1,6 +1,7 @@
 .container
-  = link_to 'Available Currencies', currencies_path
+  = link_to 'List Available Currencies', currencies_path, class: 'btn btn-primary'
+  %hr
+
   = simple_form_for :currency, url: currencies_path, method: :get do |f|
     = f.input :currency_name
-    = f.submit, class: ''
-  = link_to 'Currency', currencies_path(currency_name: 'usd')
+    = f.submit 'Identify the countries by currency name', class: 'btn btn-success'
