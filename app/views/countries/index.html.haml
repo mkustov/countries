@@ -1,6 +1,6 @@
 .container
-  = render 'filter'
   - if @countries.any?
+    = render 'filter'
     .panel.panel-default.panel-primary
       .panel-heading
         %h3.panel-title Countries
@@ -21,8 +21,10 @@
                 %td= country.currency_name
                 %td= country.currency_code
                 %td
-                  = link_to 'Edit', '#', class: 'btn btn-primary'
-                  = link_to 'Remove', '#', class: 'btn btn-danger'
+                  - if country.visited?
+                    = link_to 'Visided', country_path(country, country: { visited: false }), method: :patch, class: 'btn btn-success'
+                  - else
+                    = link_to 'Not visited', country_path(country, country: { visited: true }), method: :patch, class: 'btn btn-primary'
 
   - else
-    Sorry, no data available
+    = link_to 'Load data', load_data_countries_path, method: :post

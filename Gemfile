@@ -13,6 +13,8 @@ gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'savon', '~> 2.0'
 gem 'simple_form'
+gem 'responders', '~> 2.0'
+gem 'inherited_resources'
 
 group :development do
   gem 'thin'
