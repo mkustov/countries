@@ -20,11 +20,8 @@
                 %td= country.country_code
                 %td= country.currency_name
                 %td= country.currency_code
-                %td
-                  - if country.visited?
-                    = link_to 'Visided', country_path(country, country: { visited: false }), method: :patch, class: 'btn btn-success'
-                  - else
-                    = link_to 'Not visited', country_path(country, country: { visited: true }), method: :patch, class: 'btn btn-primary'
+                %td{ id: "visited-#{country.id}" }= render 'visited_button', visited: country.visited?, id: country.id
+
 
   - else
     = link_to 'Load data', load_data_countries_path, method: :post
