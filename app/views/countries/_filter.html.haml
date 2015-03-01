@@ -1,0 +1,4 @@
+= simple_form_for :filter, url: countries_path, method: :get do |f|
+  = f.input :currency, collection: Currency.all
+  = f.submit 'Filter', class: 'btn btn-success'
+%hr

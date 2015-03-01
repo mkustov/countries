@@ -1,0 +1,28 @@
+.container
+  = render 'filter'
+  - if @countries.any?
+    .panel.panel-default.panel-primary
+      .panel-heading
+        %h3.panel-title Countries
+      .panel-body
+        %table.table.table-bordered
+          %thead
+            %tr
+              %th Name
+              %th Country Code
+              %th Currency
+              %th Currency Code
+              %th
+          %tbody
+            - @countries.each do |country|
+              %tr
+                %td= country.name
+                %td= country.country_code
+                %td= country.currency_name
+                %td= country.currency_code
+                %td
+                  = link_to 'Edit', '#', class: 'btn btn-primary'
+                  = link_to 'Remove', '#', class: 'btn btn-danger'
+
+  - else
+    Sorry, no data available

@@ -29,3 +29,10 @@ group :development do
   gem 'bullet'
   gem 'jazz_hands'
 end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
