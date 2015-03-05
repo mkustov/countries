@@ -21,7 +21,7 @@
                 %td= country.currency_name
                 %td= country.currency_code
                 %td{data: { country: { name: country.name } } }
-                  = render 'visited_button', country: country
+                  = render 'visited_button', country_id: country.id, visited: country.visited?
 
   - else
     = link_to 'Load data', load_data_countries_path, method: :post

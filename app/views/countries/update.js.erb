@@ -1,1 +1,1 @@
-$("[data-country-name='<%= resource.name %>']").html("<%= escape_javascript render 'visited_button', country: resource %>")
+$("[data-country-name='<%= resource.name %>']").html("<%= escape_javascript render 'visited_button', country_id: resource.id, visited: resource.visited? %>")
