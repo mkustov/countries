@@ -2,8 +2,9 @@ class CountriesController < ApplicationController
   inherit_resources
   respond_to :js, :html
   def index
-    filter = params[:filter][:currency] if params[:filter].present?
-    @countries = filter.present? ? Country.includes(:currency).where(currency_id: filter) : Country.includes(:currency).all
+    filter = { :currency_id => params[:filter][:currency] } if params[:filter].present?
+    filter = { visited: false } if params[:visited].present?
+    @countries = filter.present? ? Country.includes(:currency).where(filter) : Country.includes(:currency).all
     @countries.order!(:name)
   end
 

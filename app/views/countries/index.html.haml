@@ -1,6 +1,8 @@
 .container
   - if @countries.any?
-    = render 'filter'
+    .col-md-6= render 'filter'
+    .col-md-6= link_to 'Countries to visit', countries_path(visited: false), class: 'btn btn-primary pull-right'
+    .clearfix
     .panel.panel-default.panel-primary
       .panel-heading
         %h3.panel-title Countries
