@@ -1,0 +1,4 @@
+- if country.visited?
+  = link_to 'Visided', country_path(country.id, country: { visited: false }), method: :patch, remote: true, class: 'btn btn-success'
+- else
+  = link_to 'Not Visided', country_path(country.id, country: { visited: true }), method: :patch, remote: true, class: 'btn btn-primary'
