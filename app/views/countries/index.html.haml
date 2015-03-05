@@ -1,7 +1,10 @@
 .container
   - if @countries.any?
     .col-md-6= render 'filter'
-    .col-md-6= link_to 'Countries to visit', countries_path(visited: false), class: 'btn btn-primary pull-right'
+    .col-md-6
+      .btn-group.pull-right
+        = link_to 'Countries to visit', countries_path(visited: false), class: 'btn btn-primary'
+        = link_to 'My trips', trips_countries_path, class: 'btn btn-primary'
     .clearfix
     .panel.panel-default.panel-primary
       .panel-heading
@@ -26,4 +29,4 @@
                   = render 'visited_button', country_id: country.id, visited: country.visited?
 
   - else
-    = link_to 'Load data', load_data_countries_path, method: :post
+    = link_to 'Load data', load_data_countries_path, method: :post, class: 'btn btn-primary'

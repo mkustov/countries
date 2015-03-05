@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :currencies
   resources :countries do
     post 'load_data', on: :collection
+    get 'trips', on: :collection
   end
 
 end

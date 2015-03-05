@@ -13,6 +13,10 @@ class CountriesController < ApplicationController
     redirect_to countries_path
   end
 
+  def trips
+    @countries = Country.where(visited: true)
+  end
+
   protected
 
   def permitted_params
