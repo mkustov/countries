@@ -1,5 +1,6 @@
 class Country < ActiveRecord::Base
   belongs_to :currency
+  has_and_belongs_to_many :trips
   delegate :name, to: :currency, prefix: true
 
   def self.import

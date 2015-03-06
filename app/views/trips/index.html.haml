@@ -1,0 +1,26 @@
+.container
+  .page-header
+    %h1
+      %span Listing Trips
+      = link_to 'New trip', new_trip_path, class: 'btn btn-success'
+
+  .panel.panel-default.panel-primary
+    .panel-heading
+      %h3.panel-title Trips
+    .panel-body
+      %table.table.table-bordered
+        %thead
+          %tr
+            %th Description
+            %th Date
+            %th Actions
+            %th
+        %tbody
+          - collection.each do |trip|
+            %tr
+              %td= trip.description
+              %td= trip.date.strftime('%c')
+              %td
+                = link_to 'Show', trip_path(trip), class: 'btn btn-primary'
+                = link_to 'Remove', trip_path(trip), method: :delete, confirm: 'Are you sure want to delete trip?', class: 'btn btn-danger'
+
