@@ -3,6 +3,8 @@ class Country < ActiveRecord::Base
   has_and_belongs_to_many :trips
   delegate :name, to: :currency, prefix: true
 
+  scope :visited, -> { where(visited: true)}
+
   def self.import
     Currency.destroy_all
     Country.destroy_all

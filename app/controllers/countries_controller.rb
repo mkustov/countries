@@ -3,7 +3,7 @@ class CountriesController < ApplicationController
   respond_to :js, :html
   def index
     filter = { :currency_id => params[:filter][:currency] } if params[:filter].present?
-    filter = { visited: false } if params[:visited].present?
+    filter = { visited: params[:visited] } if params[:visited].present?
     @countries = filter.present? ? Country.includes(:currency).where(filter) : Country.includes(:currency).all
     @countries.order!(:name)
   end
