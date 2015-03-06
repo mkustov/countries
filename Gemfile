@@ -15,6 +15,8 @@ gem 'savon', '~> 2.0'
 gem 'simple_form'
 gem 'responders', '~> 2.0'
 gem 'inherited_resources'
+gem 'sidekiq'
+gem 'sinatra', require: false
 
 group :development do
   gem 'thin'

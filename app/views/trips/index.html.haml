@@ -13,13 +13,14 @@
           %tr
             %th Description
             %th Date
+            %th Countries count
             %th Actions
-            %th
         %tbody
           - collection.each do |trip|
             %tr
               %td= trip.description
-              %td= trip.date.strftime('%c')
+              %td= trip.date.strftime('%D')
+              %td= trip.countries.count
               %td
                 = link_to 'Show', trip_path(trip), class: 'btn btn-primary'
                 = link_to 'Remove', trip_path(trip), method: :delete, confirm: 'Are you sure want to delete trip?', class: 'btn btn-danger'

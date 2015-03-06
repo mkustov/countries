@@ -17,4 +17,8 @@ class Country < ActiveRecord::Base
                       currency: curr)
     end
   end
+
+  def self.visit!(country_ids)
+    where(id: country_ids).update_all(visited: true)
+  end
 end
