@@ -17,6 +17,7 @@ gem 'responders', '~> 2.0'
 gem 'inherited_resources'
 gem 'sidekiq'
 gem 'sinatra', require: false
+gem 'devise'
 
 group :development do
   gem 'thin'

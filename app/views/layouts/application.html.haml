@@ -21,6 +21,11 @@
           %li
             %a{:href => "#"}
               = t(:account)
+          %li
+            - if user_signed_in?
+              = link_to current_user.email, destroy_user_session_path, method: :delete
+            - else
+              = link_to "Sign in", new_user_session_path
         .clearfix
 
     %header.navbar.navbar-default.navbar-static-top{role: "navigation"}
