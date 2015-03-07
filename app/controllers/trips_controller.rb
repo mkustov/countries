@@ -1,6 +1,7 @@
 class TripsController < ApplicationController
   inherit_resources
   respond_to :js, :html
+  load_and_authorize_resource
 
   protected
 

@@ -2,8 +2,10 @@
   .page-header
     %h1
       %span Trip
-      = link_to 'Edit', [:edit, resource], class: 'btn btn-primary'
-      = link_to 'Remove', resource, method: :delete, data: { confirm: 'Are you sure want to remove this trip?' } , class: 'btn btn-danger'
+      - if can? :edit, Trip
+        = link_to 'Edit', [:edit, resource], class: 'btn btn-primary'
+      - if can? :destroy, Trip
+        = link_to 'Remove', resource, method: :delete, data: { confirm: 'Are you sure want to remove this trip?' } , class: 'btn btn-danger'
 
       .btn-group.pull-right
         = link_to 'Back to trips', trips_path, class: 'btn btn-primary'

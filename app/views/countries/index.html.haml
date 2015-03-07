@@ -4,7 +4,6 @@
     .col-md-6
       .btn-group.pull-right
         = link_to 'Countries to visit', countries_path(visited: false), class: 'btn btn-primary'
-        = link_to 'My trips', trips_countries_path, class: 'btn btn-primary'
     .clearfix
     .panel.panel-default.panel-primary
       .panel-heading
@@ -26,7 +25,10 @@
                 %td= country.currency_name
                 %td= country.currency_code
                 %td{data: { country: { name: country.name } } }
-                  = render 'visited_button', country_id: country.id, visited: country.visited?
+                  - if can? :edit, Country
+                    = render 'visited_button', country_id: country.id, visited: country.visited?
+                  - else
+                    = country.visited? ? 'Visited' : 'Not visited'
 
   - else
     = link_to 'Load data', load_data_countries_path, method: :post, class: 'btn btn-primary'

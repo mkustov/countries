@@ -18,6 +18,7 @@ gem 'inherited_resources'
 gem 'sidekiq'
 gem 'sinatra', require: false
 gem 'devise'
+gem 'cancancan'
 
 group :development do
   gem 'thin'
