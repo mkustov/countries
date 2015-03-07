@@ -13,6 +13,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'unicorn'
 gem 'savon', '~> 2.0'
 gem 'simple_form'
+gem 'responders', '~> 2.0'
+gem 'inherited_resources'
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'devise'
+gem 'cancancan'
 
 group :development do
   gem 'thin'
@@ -28,4 +34,18 @@ group :development do
   gem 'meta_request'
   gem 'bullet'
   gem 'jazz_hands'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'rspec-its'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
 end

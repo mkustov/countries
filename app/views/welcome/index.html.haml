@@ -5,3 +5,6 @@
   = simple_form_for :currency, url: currencies_path, method: :get do |f|
     = f.input :currency_name
     = f.submit 'Identify the countries by currency name', class: 'btn btn-success'
+  %hr
+
+  = link_to 'Countries', countries_path

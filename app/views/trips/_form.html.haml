@@ -1,0 +1,5 @@
+= simple_form_for resource do |f|
+  = f.input :description
+  = f.input :date
+  = f.association :countries, collection: Country.all, multiselect: true
+  = f.submit class: 'btn btn-success'

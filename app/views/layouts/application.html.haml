@@ -10,18 +10,17 @@
     %header
       .container-fluid
         .navbar-header.navbar-header-large
-          = link_to 'home', root_path
+          %ul.nav.navbar-nav.pull-left
+            %li= link_to 'Home', root_path
+            %li= link_to 'Countries', countries_path
+            %li= link_to 'Trips', trips_path
         .navbar-sub-header
         %ul.nav.navbar-nav.pull-right
           %li
-            %a{:href => "#"}
-              = t(:menu)
-          %li
-            %a{:href => "#"}
-              = t(:page_help)
-          %li
-            %a{:href => "#"}
-              = t(:account)
+            - if user_signed_in?
+              = link_to current_user.email, destroy_user_session_path, method: :delete
+            - else
+              = link_to "Sign in", new_user_session_path
         .clearfix
 
     %header.navbar.navbar-default.navbar-static-top{role: "navigation"}

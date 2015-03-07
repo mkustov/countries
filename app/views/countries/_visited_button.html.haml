@@ -1,0 +1,1 @@
+= link_to visited ? 'Visided' : 'Not Visided', country_path(country_id, country: { visited: !visited }), method: :patch, remote: true, class: "btn btn-#{visited ? 'success' : 'primary'}"

@@ -1,0 +1,23 @@
+.container
+  .page-header
+    %h1
+      %span Trip
+      - if can? :edit, Trip
+        = link_to 'Edit', [:edit, resource], class: 'btn btn-primary'
+      - if can? :destroy, Trip
+        = link_to 'Remove', resource, method: :delete, data: { confirm: 'Are you sure want to remove this trip?' } , class: 'btn btn-danger'
+
+      .btn-group.pull-right
+        = link_to 'Back to trips', trips_path, class: 'btn btn-primary'
+  %b Desctiption:
+  = resource.description
+  %br/
+  %b Date:
+  = resource.date.strftime('%D')
+  %br/
+  - if resource.countries.any?
+    %b Countries to visit:
+    %ul
+    - resource.countries.each do |c|
+      %li=c.name
+
