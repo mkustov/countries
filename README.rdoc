@@ -1,4 +1,4 @@
-### Setup
+# Setup
 
 To set up project run the following comands:
 
@@ -8,6 +8,7 @@ $ cd countries
 $ bundle install
 $ bundle exec rake db:create db:migrate db:seed
 ```
+
 Now project is ready.
 
 Mr. Smart's user is created as a pard of seeded data. To sign in as Mr. Smart use the following credentials:
