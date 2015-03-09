@@ -2,17 +2,20 @@
 
 To set up project run the following comands:
 
-  $ git clone git@github.com:mkustov/countries.git
-  $ cd countries
-  $ bundle install
-  $ bundle exec rake db:create db:migrate db:seed
+  git clone git@github.com:mkustov/countries.git
+  cd countries
+  bundle install
+  bundle exec rake db:create db:migrate db:seed
 
 Now project is ready.
+Note that sidekiq should be up and running to process background jobs.
+
+  bundle exec sidekiq
+
+To run tests simply run:
+
+  bundle exec rspec
 
 Mr. Smart's user is created as a pard of seeded data. To sign in as Mr. Smart use the following credentials:
 * login: smart@example.com
 * password: qqqqqqqqq
-
-To run tests simply run:
-
-  $ bundle exec rspec
