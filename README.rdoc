@@ -2,12 +2,10 @@
 
 To set up project run the following comands:
 
-```sh
   $ git clone git@github.com:mkustov/countries.git
   $ cd countries
   $ bundle install
   $ bundle exec rake db:create db:migrate db:seed
-```
 
 Now project is ready.
 
@@ -17,7 +15,4 @@ Mr. Smart's user is created as a pard of seeded data. To sign in as Mr. Smart us
 
 To run tests simply run:
 
-```sh
   $ bundle exec rspec
-```
-
